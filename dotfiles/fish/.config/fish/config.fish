@@ -10,6 +10,8 @@ fnm env --use-on-cd --shell fish | source
 zoxide init fish --cmd cd | source
 fzf --fish | source
 
+direnv hook fish | source
+
 # git aliases
 alias gco='git checkout'
 alias gs='git status'
