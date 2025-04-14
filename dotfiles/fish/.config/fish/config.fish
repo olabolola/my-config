@@ -42,6 +42,7 @@ set -g fish_greeting  # Disable the default fish greeting
 
 # Aliases
 alias cat='bat'
+alias eza='ls'
 # ==============================
 # Git Aliases
 # ==============================
