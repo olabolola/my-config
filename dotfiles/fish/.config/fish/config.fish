@@ -40,6 +40,8 @@ status is-interactive; and type -q direnv; and direnv hook fish | source
 # ==============================
 set -g fish_greeting  # Disable the default fish greeting
 
+# Aliases
+alias cat='bat'
 # ==============================
 # Git Aliases
 # ==============================
