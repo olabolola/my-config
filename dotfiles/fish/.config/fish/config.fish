@@ -1,52 +1,7 @@
 # ==============================
-# Interactive Session Checks
-# ==============================
-if status is-interactive
-    # zoxide
-    if type -q zoxide
-        zoxide init fish --cmd cd | source
-    end
-
-    # fzf
-    if type -q fzf
-        fzf --fish | source
-    end
-
-    # direnv
-    if type -q direnv
-        direnv hook fish | source
-    end
-end
-
-# ==============================
 # Homebrew Environment
 # ==============================
 eval "$(/opt/homebrew/bin/brew shellenv)"
-
-# ==============================
-# Runtime Environment Managers
-# ==============================
-
-# rbenv
-if status is-interactive
-    if type -q rbenv
-        rbenv init - fish | source
-    end
-end
-
-# pyenv
-set -Ux PYENV_ROOT $HOME/.pyenv
-set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
-if status is-interactive
-    if type -q pyenv
-        pyenv init - | source
-    end
-end
-
-# fnm (Node.js)
-if type -q fnm
-    fnm env --use-on-cd --shell fish | source
-end
 
 # ==============================
 # Path Customizations
@@ -56,6 +11,29 @@ set -Ua PATH $HOME/.local/bin
 
 # Docker CLI path
 set -gx PATH /Applications/Docker.app/Contents/Resources/bin $PATH
+set -gx PATH $HOME/.local/bin $PATH
+
+# ==============================
+# Runtime Environment Managers
+# ==============================
+
+# rbenv
+status is-interactive; and type -q rbenv; and rbenv init - fish | source
+
+# pyenv
+set -Ux PYENV_ROOT $HOME/.pyenv
+set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
+status is-interactive; and type -q pyenv; and pyenv init - | source
+
+# fnm (Node.js)
+type -q fnm; and fnm env --use-on-cd --shell fish | source
+
+# ==============================
+# Interactive Enhancements
+# ==============================
+status is-interactive; and type -q zoxide; and zoxide init fish --cmd cd | source
+status is-interactive; and type -q fzf; and fzf --fish | source
+status is-interactive; and type -q direnv; and direnv hook fish | source
 
 # ==============================
 # Appearance / UX
