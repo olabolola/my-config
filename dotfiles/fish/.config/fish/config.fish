@@ -42,7 +42,7 @@ set -g fish_greeting  # Disable the default fish greeting
 
 # Aliases
 alias cat='bat'
-alias eza='ls'
+alias ls='eza'
 
 alias gitwork='git config user.name "Salih"; git config user.email "salih.jasim@cresconet.com"'
 alias gitpersonal='git config user.name "olabola"; git config user.email "leolaola@gmail.com"'
