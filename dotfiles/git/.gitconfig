@@ -2,11 +2,36 @@
     default = current
 [core]
     excludesFile = /Users/olabola/.gitignore_global
+    pager = delta
 [pull]
     rebase = true
 [rebase]
-    autoSquash = true
+	autoSquash = true
+	autoStash = true
+	updateRefs = true
 [rerere]
-    enabled = true
+	enabled = true
+	autoupdate = true
 [merge]
-	conflictStyle = zdiff3
+    conflictStyle = zdiff3
+[commit]
+    verbose = true
+[interactive]
+    diffFilter = delta --color-only
+[delta]
+    navigate = true  # use n and N to move between diff sections
+[column]
+	ui = auto
+[branch]
+	sort = -committerdate
+[tag]
+	sort = version:refname
+[diff]
+	algorithm = histogram
+	colorMoved = plain
+	mnemonicPrefix = true
+	renames = true
+[fetch]
+	prune = true
+	pruneTags = true
+	all = true
