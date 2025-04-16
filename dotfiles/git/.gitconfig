@@ -1,0 +1,10 @@
+[push]
+    default = current
+[core]
+    excludesFile = /Users/olabola/.gitignore_global
+[pull]
+    rebase = true
+[rebase]
+    autoSquash = true
+[rerere]
+    enabled = true
