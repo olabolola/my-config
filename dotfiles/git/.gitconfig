@@ -8,3 +8,5 @@
     autoSquash = true
 [rerere]
     enabled = true
+[merge]
+	conflictStyle = zdiff3
