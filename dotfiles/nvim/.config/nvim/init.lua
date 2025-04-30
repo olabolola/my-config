@@ -1,7 +1,8 @@
 require("config.lazy")
 
 vim.opt.termguicolors = true
--- vim.opt.clibpboard="unnamedplus"
+-- share the clipboard between nvim and system
+vim.opt.clipboard="unnamedplus"
 vim.opt.number = true
 vim.opt.relativenumber = true
 
