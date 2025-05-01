@@ -76,3 +76,4 @@ alias gf='git fetch -v -p'
 alias gcm='git commit --message'
 alias gbs='git --no-pager diff --stat develop..HEAD'
 alias cempty='git commit --allow-empty -m "chore: Empty commit to re-trigger build"'
+alias seemerged="git branch --merged | grep -vE '^\*|main|master|develop|cresconet-delivery|sit-env|environment/uat|environment/prod|environment/prd'"
