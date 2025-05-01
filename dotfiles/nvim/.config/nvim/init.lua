@@ -8,9 +8,9 @@ vim.opt.relativenumber = true
 
 -- Global default for all filetypes
 vim.opt.expandtab = true    -- Use spaces instead of tabs
-vim.opt.shiftwidth = 4      -- Indent by 4 spaces
-vim.opt.tabstop = 4         -- A tab counts for 4 spaces
-vim.opt.softtabstop = 4     -- When hitting <Tab>, insert 4 spaces
+vim.opt.shiftwidth = 2
+vim.opt.tabstop = 2         -- A tab counts for 4 spaces
+vim.opt.softtabstop = 2     -- When hitting <Tab>, insert 4 spaces
 
 -- NvimTree Keymaps
 -- vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', { desc = "Toggle NvimTree" })
