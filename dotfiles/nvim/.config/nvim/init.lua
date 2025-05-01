@@ -13,9 +13,9 @@ vim.opt.tabstop = 4         -- A tab counts for 4 spaces
 vim.opt.softtabstop = 4     -- When hitting <Tab>, insert 4 spaces
 
 -- NvimTree Keymaps
-vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', { desc = "Toggle NvimTree" })
-vim.keymap.set('n', '<leader>r', ':NvimTreeRefresh<CR>', { desc = "Refresh NvimTree" })
-vim.keymap.set('n', '<leader>n', ':NvimTreeFocus<CR>', { desc = "Focus NvimTree" })
+-- vim.keymap.set('n', '<leader>e', ':NvimTreeToggle<CR>', { desc = "Toggle NvimTree" })
+-- vim.keymap.set('n', '<leader>r', ':NvimTreeRefresh<CR>', { desc = "Refresh NvimTree" })
+-- vim.keymap.set('n', '<leader>n', ':NvimTreeFocus<CR>', { desc = "Focus NvimTree" })
 
 -- Clear highlights when hitting the escape key
 vim.keymap.set('n', '<Esc>', '<Cmd>noh<CR><Esc>', { noremap = true, silent = true })
