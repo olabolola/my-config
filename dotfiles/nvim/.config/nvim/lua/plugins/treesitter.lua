@@ -5,28 +5,22 @@ return {
   },
   build = ':TSUpdate',
   config = function()
-    local parser_config = require'nvim-treesitter.parsers'.get_parser_configs()
-    parser_config.gherkin = {
-      install_info = {
-        url = "https://github.com/tonycsoka/tree-sitter-gherkin", -- community grammar
-        files = { "src/parser.c" },
-        branch = "main",
-      },
-      filetype = "feature",
-    }
-
     require('nvim-treesitter.configs').setup({
-      ensure_installed = { "lua", "python", "go", "javascript" , "groovy", "terraform", "sql", "gherkin" },
-      highlight = { enable = true },
-      indent = { enable = true },
-      incremental_selection = {
+      ensure_installed = { "lua", "python", "go", "javascript" , "typescript", "groovy", "terraform", "sql", "gherkin", "c", "vim", "markdown", "markdown_inline" },
+      sync_install = false,
+      auto_install = true,
+      ignore_install = {},
+      highlight = { 
         enable = true,
-        keymaps = {
-          init_selection = "gnn",
-          node_incremental = "grn",
-          node_decremental = "grm",
-        },
+        disable = function(lang, buf)
+          local max_filesize = 100 * 1024 -- 100 KB
+          local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
+          if ok and stats and stats.size > max_filesize then
+            return true
+          end
+        end,
       },
+      indent = { enable = true },
       textobjects = {
         select = {
           enable=true,
@@ -34,6 +28,8 @@ return {
           keymaps = {
             ["af"] = "@function.outer",
             ["if"] = "@function.inner",
+            ["ic"] = "@class.inner",
+            ["ac"] = "@class.outer",
           },
         },
       },

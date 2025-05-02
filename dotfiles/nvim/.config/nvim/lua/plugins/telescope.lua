@@ -21,6 +21,11 @@ return {
     vim.keymap.set("n", "<leader>fg", function()
       builtin.live_grep({ cwd = get_git_root() })
     end)
+
+    vim.keymap.set("n", "<leader>fb", function()
+      builtin.buffers({ cwd = get_git_root() })
+    end)
+
   end
 }
 
