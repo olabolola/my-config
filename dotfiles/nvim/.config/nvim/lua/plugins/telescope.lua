@@ -1,8 +1,10 @@
 return {
   'nvim-telescope/telescope.nvim',
   tag = '0.1.8',
-  dependencies = { 'nvim-lua/plenary.nvim', 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' },
+  dependencies = { { 'nvim-telescope/telescope-fzf-native.nvim', build='make' }, 'nvim-lua/plenary.nvim', 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' },
   config = function()
+    require('telescope').setup {
+    }
     local builtin = require("telescope.builtin")
 
     local function get_git_root()
