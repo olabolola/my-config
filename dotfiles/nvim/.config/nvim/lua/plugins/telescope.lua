@@ -10,6 +10,7 @@ return {
     local function get_git_root()
       local root = vim.fn.systemlist("git rev-parse --show-toplevel")[1]
       if vim.v.shell_error == 0 then
+        print(root)
         return root
       else
         return vim.loop.cwd()
@@ -28,6 +29,9 @@ return {
       builtin.buffers({ cwd = get_git_root() })
     end)
 
+    vim.keymap.set("n", "<leader>fc", function()
+      builtin.find_files({ cwd =  vim.fn.expand("~/my-config"), hidden=true, no_ignore=false, file_ignore_patterns={".git/"} })
+    end)
   end
 }
 
