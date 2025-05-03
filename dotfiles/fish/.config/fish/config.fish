@@ -3,6 +3,18 @@
 # ==============================
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
+function gobrowse
+    # grab the origin URL
+    set url (git config --get remote.origin.url)
+    # if it’s in git@… form, convert to https://host/user/repo
+    set url (string replace -r '^git@([^:]+):(.+?)(\.git)?$' 'https://\1/\2' $url)
+    # if it’s already https://… strip any trailing “.git”
+    set url (string replace -r '^(https?://.+?)(\.git)?$' '$1' $url)
+    # echo $url
+    # open it
+    open $url
+end
+
 # ==============================
 # Path Customizations
 # ==============================
