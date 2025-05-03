@@ -44,14 +44,14 @@ return {
 
     map('n', '<leader>hS', gitsigns.stage_buffer)
     map('n', '<leader>hR', gitsigns.reset_buffer)
-    map('n', '<leader>hp', gitsigns.preview_hunk)
-    map('n', '<leader>hi', gitsigns.preview_hunk_inline)
+    vim.keymap.set('n', '<leader>hp', gitsigns.preview_hunk)
+    vim.keymap.set('n', '<leader>hi', gitsigns.preview_hunk_inline)
 
     map('n', '<leader>hb', function()
       gitsigns.blame_line({ full = true })
     end)
 
-    map('n', '<leader>hd', gitsigns.diffthis)
+    vim.keymap.set('n', '<leader>hd', gitsigns.diffthis)
 
     map('n', '<leader>hD', function()
       gitsigns.diffthis('~')
