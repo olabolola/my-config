@@ -16,6 +16,12 @@ vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2         -- A tab counts for 4 spaces
 vim.opt.softtabstop = 2     -- When hitting <Tab>, insert 4 spaces
 
+vim.keymap.set('n', '<c-k>', ':wincmd k<CR>')
+vim.keymap.set('n', '<c-j>', ':wincmd j<CR>')
+vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
+vim.keymap.set('n', '<c-h>', ':wincmd h<CR>')
+
+
 -- Clear highlights when hitting the escape key
 vim.keymap.set('n', '<Esc>', '<Cmd>noh<CR><Esc>', { noremap = true, silent = true })
 
