@@ -1,4 +1,8 @@
 theme = dark:GruvboxDarkhard,light:GruvboxLighthard
+
+# Disable ligatures
 font-feature=-liga
 font-feature=-calt
 font-feature=-dlig
+
+macos-option-as-alt=left

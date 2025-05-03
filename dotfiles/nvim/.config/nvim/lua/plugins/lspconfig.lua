@@ -16,6 +16,9 @@ return {
       bufmap('gd', vim.lsp.buf.definition,     'Go to definition')
       bufmap('K',  vim.lsp.buf.hover,          'Hover documentation')
       bufmap('<leader>rn', vim.lsp.buf.rename, 'Rename symbol')
+      vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {desc = "View all references"})
+      vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {desc = "View all code actions"})
+      vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, {desc = "Rename a reference"})
 
       if client.server_capabilities.documentFormattingProvider then
         vim.api.nvim_create_autocmd('BufWritePre', {

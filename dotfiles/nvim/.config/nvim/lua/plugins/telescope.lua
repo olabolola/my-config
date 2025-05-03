@@ -29,6 +29,9 @@ return {
       builtin.buffers({ cwd = get_git_root() })
     end)
 
+    vim.keymap.set("n", "<M-j>", "<cmd>cnext<CR>")
+    vim.keymap.set("n", "<M-k>", "<cmd>cprev<CR>")
+
     vim.keymap.set("n", "<leader>fc", function()
       builtin.find_files({ cwd =  vim.fn.expand("~/my-config"), hidden=true, no_ignore=false, file_ignore_patterns={".git/"} })
     end)
