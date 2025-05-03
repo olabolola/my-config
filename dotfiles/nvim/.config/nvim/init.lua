@@ -1,5 +1,9 @@
 require("config.lazy")
 
+-- Let pyright take care of python
+-- Noticed slow startup times without this
+vim.g.loaded_python3_provider = 0
+
 vim.opt.termguicolors = true
 -- share the clipboard between nvim and system
 vim.opt.clipboard="unnamedplus"
@@ -22,3 +26,8 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 		vim.highlight.on_yank()
 	end,
 })
+
+vim.keymap.set('n', '<leader>q', function()
+  vim.diagnostic.setqflist({ open = true })
+end, { desc = "Open diagnostics in quickfix list" })
+

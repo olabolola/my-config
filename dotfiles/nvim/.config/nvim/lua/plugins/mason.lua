@@ -11,7 +11,6 @@ return {
     dependencies = { "williamboman/mason.nvim" },
     config = function()
       require("mason-lspconfig").setup({
-        -- must be EXACTLY the lspconfig server name:
         ensure_installed    = { "gopls", "pyright", "lua_ls", "terraformls"},
         automatic_installation = true,
       })
