@@ -71,7 +71,7 @@ alias cat='bat'
 alias ls='eza'
 
 alias gitwork='git config user.name "Salih"; git config user.email "salih.jasim@cresconet.com"'
-alias gitpersonal='git config user.name "olabolola"; git config user.email "leolaola@gmail.com"'
+alias gitpersonal='git config user.name "olabolola"; git config user.email "leolabola@gmail.com"'
 # ==============================
 # Git Aliases
 # ==============================
