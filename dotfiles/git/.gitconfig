@@ -13,7 +13,8 @@
 	enabled = true
 	autoupdate = true
 [merge]
-    conflictStyle = zdiff3
+  conflictStyle = zdiff3
+  tool = fugitive
 [commit]
     verbose = true
 [interactive]
@@ -37,3 +38,5 @@
 	prune = true
 	pruneTags = true
 	all = true
+[mergetool "fugitive"]
+  cmd = nvim -f -c \"Gvdiffsplit!\" \"$MERGED\"
