@@ -1,8 +1,8 @@
 require("config.lazy")
 
 -- Normal mode: Move current line up or down
-vim.keymap.set("n", "<M-j>", ":m .+1<CR>==", { noremap = true, silent = true })
-vim.keymap.set("n", "<M-k>", ":m .-2<CR>==", { noremap = true, silent = true })
+-- vim.keymap.set("n", "<M-j>", ":m .+1<CR>==", { noremap = true, silent = true })
+-- vim.keymap.set("n", "<M-k>", ":m .-2<CR>==", { noremap = true, silent = true })
 
 -- Visual mode: Move selected lines up or down
 vim.keymap.set("v", "<M-j>", ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
