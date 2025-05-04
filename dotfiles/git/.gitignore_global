@@ -1,3 +1,4 @@
 .envrc
 .vscode/
 pyrightconfig.json
+.DS_Store
