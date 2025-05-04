@@ -19,7 +19,8 @@
 [interactive]
     diffFilter = delta --color-only
 [delta]
-    navigate = true  # use n and N to move between diff sections
+  navigate = true  # use n and N to move between diff sections
+  side-by-side = true
 [column]
 	ui = auto
 [branch]
@@ -31,6 +32,7 @@
 	colorMoved = plain
 	mnemonicPrefix = true
 	renames = true
+	tool = nvimdiff
 [fetch]
 	prune = true
 	pruneTags = true
