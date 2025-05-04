@@ -29,6 +29,10 @@ return {
       builtin.buffers({ cwd = get_git_root() })
     end)
 
+    vim.keymap.set("n", "<leader>gb", function()
+      builtin.git_branches()
+    end)
+
     vim.keymap.set("n", "<M-j>", "<cmd>cnext<CR>")
     vim.keymap.set("n", "<M-k>", "<cmd>cprev<CR>")
 
