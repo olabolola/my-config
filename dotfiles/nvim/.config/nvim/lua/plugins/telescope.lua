@@ -38,6 +38,10 @@ return {
       builtin.grep_string({ cwd = get_git_root() })
     end)
 
+    vim.keymap.set("n", "<leader>fs", function()
+     builtin.live_grep({ search_dirs = { vim.fn.expand("%:p") } })
+    end)
+
     vim.keymap.set("n", "<leader>gb", function()
       builtin.git_branches()
     end)
