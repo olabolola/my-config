@@ -4,6 +4,11 @@ return {
   dependencies = { { 'nvim-telescope/telescope-fzf-native.nvim', build='make' }, 'nvim-lua/plenary.nvim', 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' },
   config = function()
     require('telescope').setup {
+      defaults = {
+        file_ignore_patterns = {
+          "poetry.lock", "node_modules"
+        }
+      }
     }
     local builtin = require("telescope.builtin")
 
@@ -27,6 +32,10 @@ return {
 
     vim.keymap.set("n", "<leader>fb", function()
       builtin.buffers({ cwd = get_git_root() })
+    end)
+
+    vim.keymap.set("n", "<leader>fw", function()
+      builtin.grep_string({ cwd = get_git_root() })
     end)
 
     vim.keymap.set("n", "<leader>gb", function()
