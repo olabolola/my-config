@@ -8,7 +8,8 @@ require("config.lazy")
 vim.keymap.set("v", "<M-j>", ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
 vim.keymap.set("v", "<M-k>", ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
 
-
+vim.opt.ignorecase = true
+vim.opt.smartcase = true -- case sensitive if I include an uppercase letter in search
 -- Let pyright take care of python
 -- Noticed slow startup times without this
 vim.g.loaded_python3_provider = 0
