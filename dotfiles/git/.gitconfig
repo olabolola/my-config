@@ -14,7 +14,7 @@
 	autoupdate = true
 [merge]
   conflictStyle = zdiff3
-  tool = fugitive
+  tool = smerge
 [commit]
     verbose = true
 [interactive]
@@ -38,5 +38,6 @@
 	prune = true
 	pruneTags = true
 	all = true
-[mergetool "fugitive"]
-  cmd = nvim -f -c \"Gvdiffsplit!\" \"$MERGED\"
+[mergetool "smerge"]
+  cmd = smerge mergetool "$BASE" "$LOCAL" "$REMOTE" -o "$MERGED"
+  trustExitCode = true
