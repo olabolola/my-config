@@ -1,5 +1,7 @@
 theme = dark:GruvboxDarkhard,light:GruvboxLighthard
 
+font-family = "JetBrainsMono Nerd Font Mono"
+
 # Disable ligatures
 font-feature=-liga
 font-feature=-calt
