@@ -2,7 +2,6 @@
 # Homebrew Environment
 # ==============================
 eval "$(/opt/homebrew/bin/brew shellenv)"
-
 function gobrowse
     # grab the origin URL
     set url (git config --get remote.origin.url)
