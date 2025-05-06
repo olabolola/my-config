@@ -1,3 +1,11 @@
+[apply]
+  whitespace = fix # remove trailing whitespace
+[log]
+  date = iso-local
+[color "diff"]
+  whitespace = red reverse
+[format]
+  pretty = fuller
 [push]
     default = current
 [core]
@@ -33,7 +41,8 @@
 	colorMoved = plain
 	mnemonicPrefix = true
 	renames = true
-	tool = nvimdiff
+  tool = nvimdiff
+  colorMovedWS = allow-indentation-change
 [fetch]
 	prune = true
 	pruneTags = true
