@@ -1,11 +1,7 @@
-[apply]
-  whitespace = fix # remove trailing whitespace
 [log]
   date = iso-local
 [color]
   ui = true
-[color "diff"]
-  whitespace = red reverse
 [format]
   pretty = fuller
 [push]
