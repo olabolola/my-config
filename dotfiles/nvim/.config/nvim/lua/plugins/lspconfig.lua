@@ -14,12 +14,8 @@ return {
       end
     end,{ desc = "Go to definition" })
     -- 1) shared on_attach for keymaps, autocmds, etc.
-      local on_attach = function(client, bufnr)
-    --   local bufmap = function(keys, fn, desc)
-    --     vim.keymap.set('n', keys, fn, { buffer = bufnr, desc = desc })
-    --   end
+    local on_attach = function(client, bufnr)
 
-      bufmap('gd', vim.lsp.buf.definition, 'Go to definition')
       bufmap('K', vim.lsp.buf.hover, 'Hover documentation')
       bufmap('<leader>rn', vim.lsp.buf.rename, 'Rename symbol')
       vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, { desc = "View all references" })
@@ -49,8 +45,9 @@ return {
         "yamlls",
         "gopls",
         "bashls",
-        "sqls"
-        -- "tsserver", -- for example
+        "sqls",
+        "terraformls",
+        "tflint",
       },
       automatic_installation = true,
       -- This is where you define the handlers for LSP servers
@@ -70,18 +67,23 @@ return {
             capabilities = capabilities,
             settings = {
               Lua = {
+                runtime = {
+                  version = 'LuaJIT',
+                },
                 diagnostics = {
                   disable = { "missing-fields" },
                   globals = { "vim" },
                 },
                 telemetry = { enable = false },
                 workspace = {
+                  library = vim.api.nvim_get_runtime_file('', true),
                   checkThirdParty = false, -- Can speed up loading if you don't use external libs in your Neovim config that need workspace checking
                 }
               },
             },
           }
         end,
+
 
         -- Custom handler for sql
         ["sqls"] = function()
