@@ -1,9 +1,14 @@
 return {
   {
-    "ellisonleao/gruvbox.nvim",
+    "catppuccin/nvim",
+    name = "catppuccin",
     priority = 1000,
+  },
+  {
+    "ellisonleao/gruvbox.nvim",
+    name   = "catppuccin",
     config = function()
-      vim.cmd("colorscheme gruvbox")
-    end
-  }
+      require("gruvbox").setup{}
+    end,
+  },
 }

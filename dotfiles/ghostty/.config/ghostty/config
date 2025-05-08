@@ -1,5 +1,5 @@
-theme = dark:GruvboxDarkhard,light:GruvboxLighthard
-
+# theme = dark:GruvboxDarkhard,light:GruvboxLighthard
+theme = dark:catppuccin-macchiato,light:catppuccin-latte
 font-family = "JetBrainsMonoNL Nerd Font Mono"
 
 # Disable ligatures
