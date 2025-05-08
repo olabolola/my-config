@@ -6,11 +6,18 @@ return {
     local lspconfig = require('lspconfig')
     local mason_lspconfig = require('mason-lspconfig')
 
-    -- 1) shared on_attach for keymaps, autocmds, etc.
-    local on_attach = function(client, bufnr)
-      local bufmap = function(keys, fn, desc)
-        vim.keymap.set('n', keys, fn, { buffer = bufnr, desc = desc })
+    vim.keymap.set('n','gd',function()
+      if next(vim.lsp.get_clients{bufnr=0}) ~= nil then
+        vim.lsp.buf.definition()
+      else
+        vim.cmd('normal! gd')
       end
+    end,{ desc = "Go to definition" })
+    -- 1) shared on_attach for keymaps, autocmds, etc.
+      local on_attach = function(client, bufnr)
+    --   local bufmap = function(keys, fn, desc)
+    --     vim.keymap.set('n', keys, fn, { buffer = bufnr, desc = desc })
+    --   end
 
       bufmap('gd', vim.lsp.buf.definition, 'Go to definition')
       bufmap('K', vim.lsp.buf.hover, 'Hover documentation')
