@@ -100,18 +100,22 @@ return {
         end,
 
         -- Custom handler for pyright
+        -- see https://github.com/microsoft/pyright/blob/main/docs/settings.md
         ["pyright"] = function()
           lspconfig.pyright.setup {
             on_attach = on_attach,
             capabilities = capabilities,
+            disableOrganizeImports = true,
+            reportArgumentType = "information",
             settings = {
+              disableOrganizeImports = true,
               python = {
                 analysis = {
+                  autoImportCompletions = true,
                   typeCheckingMode = "basic",
                   autoSearchPaths = true,
+                  diagnosticMode = "workspace",
                   useLibraryCodeForTypes = true,
-                  -- reportMissingImports = "warning", -- Or "error" / "none"
-                  -- reportUnusedImport = "warning", -- Or "error" / "none"
                 },
               },
             },
