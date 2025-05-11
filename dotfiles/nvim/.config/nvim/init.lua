@@ -1,4 +1,6 @@
 require("config.lazy")
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
 -- Normal mode: Move current line up or down
 -- vim.keymap.set("n", "<M-j>", ":m .+1<CR>==", { noremap = true, silent = true })
