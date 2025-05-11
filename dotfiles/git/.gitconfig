@@ -1,5 +1,5 @@
 [apply]
-  whitespace = fix # remove trailing whitespace
+  whitespace = fix ; remove trailing whitespace
 [log]
   date = iso-local
 [color]
@@ -30,7 +30,7 @@
 [interactive]
     diffFilter = delta --color-only
 [delta]
-  navigate = true  # use n and N to move between diff sections
+  navigate = true  ; use n and N to move between diff sections
   ; side-by-side = true
 [column]
 	ui = auto
