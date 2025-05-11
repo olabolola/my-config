@@ -77,7 +77,7 @@ return {
                 telemetry = { enable = false },
                 workspace = {
                   library = vim.api.nvim_get_runtime_file('', true),
-                  checkThirdParty = false, -- Can speed up loading if you don't use external libs in your Neovim config that need workspace checking
+                  checkThirdParty = false,
                 }
               },
             },
