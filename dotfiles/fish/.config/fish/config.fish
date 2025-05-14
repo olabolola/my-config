@@ -1,6 +1,4 @@
-# ==============================
 # Homebrew Environment
-# ==============================
 eval "$(/opt/homebrew/bin/brew shellenv)"
 function gobrowse
     # grab the origin URL
@@ -13,6 +11,7 @@ function gobrowse
     # open it
     open $url
 end
+
 # change cwd when exiting yazi
 function y
 	set tmp (mktemp -t "yazi-cwd.XXXXXX")
@@ -22,9 +21,8 @@ function y
 	end
 	rm -f -- "$tmp"
 end
-# ==============================
+
 # Path Customizations
-# ==============================
 # pipx installs
 set -Ua PATH $HOME/.local/bin
 
@@ -48,10 +46,8 @@ set fish_cursor_insert line
 set fish_cursor_replace_one underscore
 
 source "$HOME/.cargo/env.fish"
-# ==============================
-# Runtime Environment Managers
-# ==============================
 
+# Runtime Environment Managers
 # rbenv
 status is-interactive; and type -q rbenv; and rbenv init - fish | source
 
@@ -70,9 +66,7 @@ status is-interactive; and type -q zoxide; and zoxide init fish --cmd cd | sourc
 status is-interactive; and type -q fzf; and fzf --fish | source
 status is-interactive; and type -q direnv; and direnv hook fish | source
 
-# ==============================
 # Appearance / UX
-# ==============================
 set -g fish_greeting  # Disable the default fish greeting
 
 # Aliases
@@ -80,11 +74,10 @@ alias cat='bat'
 alias ls='eza'
 alias ll='eza -alh --icons --no-user --git --git-repos'
 
+
+# Git Aliases
 alias gitwork='git config user.name "Salih"; git config user.email "salih.jasim@cresconet.com"'
 alias gitpersonal='git config user.name "olabolola"; git config user.email "leolabola@gmail.com"'
-# ==============================
-# Git Aliases
-# ==============================
 alias gco='git checkout'
 alias ga='git add'
 alias gc='git commit'
