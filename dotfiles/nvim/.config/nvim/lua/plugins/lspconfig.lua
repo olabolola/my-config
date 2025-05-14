@@ -39,7 +39,6 @@ return {
       -- A list of servers to ensure are installed. Mason will install them if they aren't.
       -- Add all the LSPs you use here.
       ensure_installed = {
-        "lua_ls",
         "pyright",
         "jsonls",
         "yamlls",
@@ -50,6 +49,7 @@ return {
         "tflint",
       },
       automatic_installation = true,
+      automatic_enable = true,
       -- This is where you define the handlers for LSP servers
       handlers = {
         -- Default handler (for any server without a custom entry below)
@@ -59,31 +59,6 @@ return {
             capabilities = capabilities,
           }
         end,
-
-        -- Custom handler for lua_ls
-        ["lua_ls"] = function()
-          lspconfig.lua_ls.setup { -- Use lspconfig.lua_ls directly here
-            on_attach = on_attach,
-            capabilities = capabilities,
-            settings = {
-              Lua = {
-                runtime = {
-                  version = 'LuaJIT',
-                },
-                diagnostics = {
-                  disable = { "missing-fields" },
-                  globals = { "vim" },
-                },
-                telemetry = { enable = false },
-                workspace = {
-                  library = vim.api.nvim_get_runtime_file('', true),
-                  checkThirdParty = false,
-                }
-              },
-            },
-          }
-        end,
-
 
         -- Custom handler for sql
         ["sqls"] = function()
