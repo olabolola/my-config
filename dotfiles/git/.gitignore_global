@@ -1,5 +1,4 @@
 .envrc
 .vscode/
 pyrightconfig.json
-.DS_Store
-*.gitignore*
+**/.DS_Store
