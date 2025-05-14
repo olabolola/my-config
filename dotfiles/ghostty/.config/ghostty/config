@@ -1,5 +1,5 @@
 # theme = dark:GruvboxDarkhard,light:GruvboxLighthard
-# theme = dark:catppuccin-mocha,light:catppuccin-latte
+theme = dark:catppuccin-mocha,light:catppuccin-latte
 # font-family = "JetBrainsMonoNL Nerd Font Mono"
 font-family="JetBrainsMonoNL Nerd Font Mono"
 # font-family="DepartureMono Nerd Font"
