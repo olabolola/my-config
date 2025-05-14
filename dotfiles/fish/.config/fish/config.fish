@@ -86,9 +86,9 @@ alias gitpersonal='git config user.name "olabolola"; git config user.email "leol
 # Git Aliases
 # ==============================
 alias gco='git checkout'
-alias gs='git status -s'
 alias ga='git add'
 alias gc='git commit'
+alias gs='git status'
 alias gcane='git commit --amend --no-edit'
 alias gw='git switch'
 alias gw-='git switch -'
