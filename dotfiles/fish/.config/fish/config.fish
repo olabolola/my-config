@@ -30,14 +30,6 @@ set -Ua PATH $HOME/.local/bin
 set -gx PATH /Applications/Docker.app/Contents/Resources/bin $PATH
 set -gx PATH $HOME/.local/bin $PATH
 
-if not pgrep -x yabai > /dev/null
-    yabai --start-service
-end
-
-if not pgrep -x skhd > /dev/null
-    skhd --start-service
-end
-
 # Vim mode
 set -g fish_key_bindings fish_vi_key_bindings
 set fish_vi_force_cursor 1
