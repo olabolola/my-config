@@ -15,6 +15,7 @@ vim.g.loaded_python3_provider = 0
 -- share the clipboard between nvim and system
 vim.opt.clipboard="unnamedplus"
 vim.opt.termguicolors = true
+
 -- relative line numbers
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -23,15 +24,15 @@ vim.opt.relativenumber = true
  -- Use spaces instead of tabs
 vim.opt.expandtab = true
 vim.opt.shiftwidth = 2
-vim.opt.tabstop = 2 -- A tab counts for 4 spaces
-vim.opt.softtabstop = 2 -- When hitting <Tab>, insert 4 spaces
+vim.opt.tabstop = 2 -- A tab counts for 2 spaces
+vim.opt.softtabstop = 2 -- When hitting <Tab>, insert 2 spaces
 
 -- Clear highlights when hitting the escape key
 vim.keymap.set('n', '<Esc>', '<Cmd>noh<CR><Esc>', { noremap = true, silent = true })
 
 -- highlight yanked text
 vim.api.nvim_create_autocmd('TextYankPost', {
-	desc = 'Highlight when yanking (copying) text',
+	desc = 'Highlight when yanking text',
 	group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
 	callback = function()
 		vim.highlight.on_yank()

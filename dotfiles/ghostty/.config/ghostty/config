@@ -1,13 +1,6 @@
 # theme = dark:GruvboxDarkhard,light:GruvboxLighthard
 theme = dark:catppuccin-mocha,light:catppuccin-latte
-# font-family = "JetBrainsMonoNL Nerd Font Mono"
 font-family="JetBrainsMonoNL Nerd Font Mono"
-# font-family="DepartureMono Nerd Font"
-# font-family = "FiraCode Nerd Font Mono Reg"
-# font-style = "Reg"
-# font-family = "UbuntuMono Nerd Font"
-# font-family = "Inconsolata Nerd Font Mono"
-# font-family="Iosevka Nerd Font Mono"
 # Disable ligatures
 # font-feature=-liga
 # font-feature=-calt
