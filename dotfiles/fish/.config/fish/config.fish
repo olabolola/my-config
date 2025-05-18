@@ -55,7 +55,7 @@ set -Ux PYENV_ROOT $HOME/.pyenv
 set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
 status is-interactive; and type -q pyenv; and pyenv init - | source
 
-# fnm (Node.js)
+# fnm (fast node manager)
 type -q fnm; and fnm env --use-on-cd --shell fish | source
 
 # ==============================
