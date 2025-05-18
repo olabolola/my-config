@@ -1,5 +1,8 @@
 require("config.lazy")
 
+-- Replace status line with command line when active
+vim.o.cmdheight = 0
+
 -- Visual mode: Move selected lines up or down
 vim.keymap.set("v", "<M-j>", ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
 vim.keymap.set("v", "<M-k>", ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
