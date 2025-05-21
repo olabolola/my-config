@@ -14,7 +14,6 @@ end
 
 # Navigate to git project root
 function groot
-    # grab the origin URL
     set git_root (git rev-parse --show-toplevel)
     cd $git_root
 end
