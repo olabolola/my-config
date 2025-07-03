@@ -1,6 +1,6 @@
 # Homebrew Environment
 eval "$(/opt/homebrew/bin/brew shellenv)"
-
+set -x JAVA_HOME "/Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Contents/Home"
 # open the git repo remote url from within any git repo
 function gobrowse
     # grab the origin URL
@@ -35,13 +35,6 @@ set -Ua PATH $HOME/.local/bin
 # Docker CLI path
 set -gx PATH /Applications/Docker.app/Contents/Resources/bin $PATH
 set -gx PATH $HOME/.local/bin $PATH
-
-# Vim mode for fish shell
-set -g fish_key_bindings fish_vi_key_bindings
-set fish_vi_force_cursor 1
-set fish_cursor_default block
-set fish_cursor_insert line
-set fish_cursor_replace_one underscore
 
 source "$HOME/.cargo/env.fish"
 
