@@ -8,3 +8,4 @@ font-family="JetBrainsMonoNL Nerd Font Mono"
 # font-feature=-dlig
 
 macos-option-as-alt=left
+keybind = shift+enter=text:\x1b\r

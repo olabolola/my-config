@@ -18,16 +18,6 @@ function groot
     cd $git_root
 end
 
-# change cwd when exiting yazi
-function y
-	set tmp (mktemp -t "yazi-cwd.XXXXXX")
-	yazi $argv --cwd-file="$tmp"
-	if set cwd (command cat -- "$tmp"); and [ -n "$cwd" ]; and [ "$cwd" != "$PWD" ]
-		builtin cd -- "$cwd"
-	end
-	rm -f -- "$tmp"
-end
-
 # Path Customizations
 # pipx installs
 set -Ua PATH $HOME/.local/bin
@@ -36,7 +26,10 @@ set -Ua PATH $HOME/.local/bin
 set -gx PATH /Applications/Docker.app/Contents/Resources/bin $PATH
 set -gx PATH $HOME/.local/bin $PATH
 
-source "$HOME/.cargo/env.fish"
+# duckdb
+set -gx PATH '/Users/salihjasim/.duckdb/cli/latest' $PATH
+
+#source "$HOME/.cargo/env.fish"
 
 # Runtime Environment Managers
 # rbenv
@@ -60,14 +53,20 @@ status is-interactive; and type -q direnv; and direnv hook fish | source
 # Appearance / UX
 set -g fish_greeting  # Disable the default fish greeting
 
+# Auto-use Node version on shell startup
+nvm use 24.6.0 > /dev/null 2>&1
+
+# sublime text
+alias subl='open -a "Sublime Text"'
+
 # Aliases
 alias cat='bat'
 alias ls='eza'
 alias ll='eza -alh --icons --no-user --git --git-repos'
-
+alias vi='nvim'
 
 # Git Aliases
-alias gitwork='git config user.name "Salih"; git config user.email "salih.jasim@cresconet.com"'
+alias gitwork='git config user.name "Salih"; git config user.email "salih.jasim@allient.com"'
 alias gitpersonal='git config user.name "olabolola"; git config user.email "leolabola@gmail.com"'
 alias gco='git checkout'
 alias ga='git add'
