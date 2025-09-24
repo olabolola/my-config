@@ -63,7 +63,6 @@ alias subl='open -a "Sublime Text"'
 alias cat='bat'
 alias ls='eza'
 alias ll='eza -alh --icons --no-user --git --git-repos'
-alias vi='nvim'
 
 # Git Aliases
 alias gitwork='git config user.name "Salih"; git config user.email "salih.jasim@allient.com"'
