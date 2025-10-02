@@ -13,6 +13,7 @@
 [core]
     excludesFile = /Users/olabola/.gitignore_global
     pager = delta
+	editor = nvim -f
 [pull]
     rebase = true
 [rebase]

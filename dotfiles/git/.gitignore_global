@@ -4,3 +4,5 @@ pyrightconfig.json
 **/.DS_Store
 *gitignore*
 !.gitignore
+.claude/
+.idea/

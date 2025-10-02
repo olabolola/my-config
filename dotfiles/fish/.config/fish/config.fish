@@ -1,6 +1,9 @@
 # Homebrew Environment
 eval "$(/opt/homebrew/bin/brew shellenv)"
 set -x JAVA_HOME "/Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Contents/Home"
+set -gx PATH /opt/homebrew/bin /usr/local/bin $PATH
+alias python3="python3.12"
+alias pip3="pip3.12"
 # open the git repo remote url from within any git repo
 function gobrowse
     # grab the origin URL
