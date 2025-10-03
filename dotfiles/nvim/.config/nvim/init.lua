@@ -11,10 +11,6 @@ vim.keymap.set("v", "<M-k>", ":m '<-2<CR>gv=gv", { noremap = true, silent = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 
--- Let pyright take care of python
--- Noticed slow startup times without this
-vim.g.loaded_python3_provider = 0
-
 -- share the clipboard between nvim and system
 vim.opt.clipboard="unnamedplus"
 vim.opt.termguicolors = true
@@ -45,3 +41,19 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 vim.keymap.set('n', '<leader>q', function()
   vim.diagnostic.setqflist({ open = true })
 end, { desc = "Open diagnostics in quickfix list" })
+
+
+-- Configure the "ty" language server for python
+vim.lsp.config('ty', {
+  cmd = { "ty",  "server" },
+  filetypes = { "python" },
+  root_markers = { ".git", "pyproject.toml", "setup.py", "requirements.txt" },
+  settings = {
+    ty = {
+      -- any ty-specific settings go here
+    }
+  }
+})
+
+-- Enable the server
+vim.lsp.enable('ty')
