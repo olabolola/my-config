@@ -1,11 +1,5 @@
-# theme = dark:Ghostty Default Style Dark,light:Gruvbox Light Hard
-# theme = dark:catppuccin-mocha,light:catppuccin-latte
-# theme = dark:flexoki-dark,light:flexoki-light
+theme = dark:Catppuccin Frappe,light:Catppuccin Latte
 font-family="JetBrainsMonoNL Nerd Font Mono"
-# Disable ligatures
-# font-feature=-liga
-# font-feature=-calt
-# font-feature=-dlig
 
 macos-option-as-alt=left
 keybind = shift+enter=text:\x1b\r
