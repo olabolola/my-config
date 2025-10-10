@@ -54,6 +54,3 @@ vim.lsp.config('ty', {
     }
   }
 })
-
--- Enable the server
-vim.lsp.enable('ty')
