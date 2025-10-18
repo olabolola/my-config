@@ -2,8 +2,6 @@
 eval "$(/opt/homebrew/bin/brew shellenv)"
 set -x JAVA_HOME "/Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Contents/Home"
 set -gx PATH /opt/homebrew/bin /usr/local/bin $PATH
-alias python3="python3.12"
-alias pip3="pip3.12"
 
 # open the git repo remote url from within any git repo
 function gobrowse
@@ -33,9 +31,6 @@ set -gx PATH $HOME/.local/bin $PATH
 # duckdb
 set -gx PATH '/Users/salihjasim/.duckdb/cli/latest' $PATH
 
-# rbenv
-status is-interactive; and type -q rbenv; and rbenv init - fish | source
-
 # fnm (fast node manager)
 type -q fnm; and fnm env --use-on-cd --shell fish | source
 
@@ -58,11 +53,11 @@ alias subl='open -a "Sublime Text"'
 # Aliases
 alias cat='bat'
 alias ls='eza'
-alias ll='eza -alh --icons --no-user --git --git-repos'
+alias ll='eza -alh --icons --no-user'
 
 # Git Aliases
 alias gitwork='git config user.name "Salih"; git config user.email "salih.jasim@allient.com"'
-alias gitpersonal='git config user.name "olabolola"; git config user.email "leolabola@gmail.com"'
+alias gitpersonal='git config user.name "olabolola"; git config user.email "salih@salihjasim.com"'
 alias gco='git checkout'
 alias ga='git add'
 alias gc='git commit'
