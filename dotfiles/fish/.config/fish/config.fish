@@ -4,6 +4,7 @@ set -x JAVA_HOME "/Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Conten
 set -gx PATH /opt/homebrew/bin /usr/local/bin $PATH
 alias python3="python3.12"
 alias pip3="pip3.12"
+
 # open the git repo remote url from within any git repo
 function gobrowse
     # grab the origin URL
@@ -32,16 +33,8 @@ set -gx PATH $HOME/.local/bin $PATH
 # duckdb
 set -gx PATH '/Users/salihjasim/.duckdb/cli/latest' $PATH
 
-#source "$HOME/.cargo/env.fish"
-
-# Runtime Environment Managers
 # rbenv
 status is-interactive; and type -q rbenv; and rbenv init - fish | source
-
-# pyenv
-set -Ux PYENV_ROOT $HOME/.pyenv
-set -U fish_user_paths $PYENV_ROOT/bin $fish_user_paths
-status is-interactive; and type -q pyenv; and pyenv init - | source
 
 # fnm (fast node manager)
 type -q fnm; and fnm env --use-on-cd --shell fish | source
@@ -77,7 +70,7 @@ alias gs='git status'
 alias gcane='git commit --amend --no-edit'
 alias gw='git switch'
 alias gw-='git switch -'
-alias gl="git log --color --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+alias gl="git log --oneline"
 alias gout='git log @{u}..'
 alias gpf='git push --force-with-lease'
 alias gf='git fetch -v -p'
