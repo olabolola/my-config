@@ -18,9 +18,9 @@ vim.opt.relativenumber = true
 -- Global default for all filetypes
 -- Use spaces instead of tabs
 vim.opt.expandtab = true
-vim.opt.shiftwidth = 4
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
+vim.opt.shiftwidth = 2
+vim.opt.tabstop = 2
+vim.opt.softtabstop = 2
 
 -- Clear highlights when hitting the escape key
 vim.keymap.set('n', '<Esc>', '<Cmd>noh<CR><Esc>', { noremap = true, silent = true })

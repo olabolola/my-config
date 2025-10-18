@@ -1,12 +1,12 @@
 return {
   'nvim-telescope/telescope.nvim',
-  tag = '0.1.8',
+  branch = '0.1.x',
   dependencies = { { 'nvim-telescope/telescope-fzf-native.nvim', build='make' }, 'nvim-lua/plenary.nvim', 'nvim-treesitter/nvim-treesitter', 'nvim-tree/nvim-web-devicons' },
   config = function()
     require('telescope').setup {
       defaults = {
         file_ignore_patterns = {
-          "poetry.lock", "node_modules"
+          "poetry.lock", "node_modules", "uv.lock", ".venv", ".git"
         }
       }
     }
@@ -22,32 +22,25 @@ return {
       end
     end
 
+    -- Find files
     vim.keymap.set("n", "<leader>ff", function()
-      builtin.find_files({ cwd = get_git_root() })
+      builtin.find_files({ cwd = get_git_root(), hidden=true })
     end)
 
+    -- Find contents inside files
     vim.keymap.set("n", "<leader>fg", function()
-      builtin.live_grep({ cwd = get_git_root() })
+      builtin.live_grep({ cwd = get_git_root(), hidden=true })
     end)
 
-    vim.keymap.set("n", "<leader>fb", function()
-      builtin.buffers({ cwd = get_git_root() })
-    end)
-
+    -- Search for the word underneath the cursor
     vim.keymap.set("n", "<leader>fw", function()
-      builtin.grep_string({ cwd = get_git_root() })
+      builtin.grep_string({ cwd = get_git_root(), hidden=true })
     end)
 
+    -- Search contents of current file
     vim.keymap.set("n", "<leader>fs", function()
-     builtin.live_grep({ search_dirs = { vim.fn.expand("%:p") } })
+      builtin.live_grep({ search_dirs = { vim.fn.expand("%:p") } })
     end)
-
-    vim.keymap.set("n", "<leader>gb", function()
-      builtin.git_branches()
-    end)
-
-    vim.keymap.set("n", "<M-j>", "<cmd>cnext<CR>")
-    vim.keymap.set("n", "<M-k>", "<cmd>cprev<CR>")
 
     vim.keymap.set("n", "<leader>fc", function()
       builtin.find_files({ cwd =  vim.fn.expand("~/my-config"), hidden=true, no_ignore=false, file_ignore_patterns={".git/"} })
