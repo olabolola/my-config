@@ -1,4 +1,4 @@
-theme = dark:Catppuccin Frappe,light:Catppuccin Latte
+theme = dark:Ghostty Default Style Dark,light:Catppuccin Latte
 font-family="JetBrainsMonoNL Nerd Font Mono"
 
 macos-option-as-alt=left
