@@ -3,10 +3,6 @@ require("config.lazy")
 -- Replace status line with command line when active
 vim.o.cmdheight = 0
 
--- Visual mode: Move selected lines up or down
-vim.keymap.set("v", "<M-j>", ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
-vim.keymap.set("v", "<M-k>", ":m '<-2<CR>gv=gv", { noremap = true, silent = true })
-
 -- search is only case sensitive if I include an uppercase letter in search
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
@@ -20,7 +16,7 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 
 -- Global default for all filetypes
- -- Use spaces instead of tabs
+-- Use spaces instead of tabs
 vim.opt.expandtab = true
 vim.opt.shiftwidth = 2
 vim.opt.tabstop = 2 -- A tab counts for 2 spaces
