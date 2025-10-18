@@ -18,9 +18,9 @@ vim.opt.relativenumber = true
 -- Global default for all filetypes
 -- Use spaces instead of tabs
 vim.opt.expandtab = true
-vim.opt.shiftwidth = 2
-vim.opt.tabstop = 2 -- A tab counts for 2 spaces
-vim.opt.softtabstop = 2 -- When hitting <Tab>, insert 2 spaces
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
 
 -- Clear highlights when hitting the escape key
 vim.keymap.set('n', '<Esc>', '<Cmd>noh<CR><Esc>', { noremap = true, silent = true })
@@ -32,21 +32,4 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 	callback = function()
 		vim.highlight.on_yank()
 	end,
-})
-
-vim.keymap.set('n', '<leader>q', function()
-  vim.diagnostic.setqflist({ open = true })
-end, { desc = "Open diagnostics in quickfix list" })
-
-
--- Configure the "ty" language server for python
-vim.lsp.config('ty', {
-  cmd = { "ty",  "server" },
-  filetypes = { "python" },
-  root_markers = { ".git", "pyproject.toml", "setup.py", "requirements.txt" },
-  settings = {
-    ty = {
-      -- any ty-specific settings go here
-    }
-  }
 })
