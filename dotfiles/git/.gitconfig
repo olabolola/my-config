@@ -12,6 +12,7 @@
     default = current
 [core]
     excludesFile = /Users/olabola/.gitignore_global
+    excludesFile = /Users/salihjasim/.gitignore_global
     pager = delta
 	editor = nvim -f
 [pull]

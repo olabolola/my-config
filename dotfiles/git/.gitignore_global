@@ -6,4 +6,5 @@ pyrightconfig.json
 !.gitignore
 .claude/
 .idea/
+**/.idea/
 .claude/
