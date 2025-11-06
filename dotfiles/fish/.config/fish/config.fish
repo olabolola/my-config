@@ -2,7 +2,6 @@
 eval "$(/opt/homebrew/bin/brew shellenv)"
 set -x JAVA_HOME "/Library/Java/JavaVirtualMachines/amazon-corretto-8.jdk/Contents/Home"
 set -gx PATH /opt/homebrew/bin /usr/local/bin $PATH
-
 # open the git repo remote url from within any git repo
 function gobrowse
     # grab the origin URL
