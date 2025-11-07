@@ -54,7 +54,7 @@ alias subl='open -a "Sublime Text"'
 alias cat='bat'
 alias ls='eza'
 alias ll='eza -alh --icons --no-user'
-
+# Aliases
 # Git Aliases
 alias gitwork='git config user.name "Salih"; git config user.email "salih.jasim@allient.com"'
 alias gitpersonal='git config user.name "olabolola"; git config user.email "salih@salihjasim.com"'
@@ -73,6 +73,10 @@ alias gcm='git commit --message'
 alias gbs='git --no-pager diff --stat develop..HEAD'
 alias cempty='git commit --allow-empty -m "chore: Empty commit to re-trigger build"'
 alias seemerged="git branch --merged | grep -vE '^\*|main|master|develop'"
+
+# Other aliases
+alias cd..='cd ..'
+alias cd-='cd -'
 
 starship init fish | source
 
