@@ -34,6 +34,14 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     end,
 })
 
+-- Format file or selection
+vim.keymap.set({'n', 'v'}, '<leader>f', function()
+    require('conform').format({ async = false, lsp_fallback = true })
+end, { desc = 'Format file or selection' })
+
+-- Show signature help (function parameters) while typing
+vim.keymap.set('i', '<C-k>', vim.lsp.buf.signature_help, { desc = 'Signature help' })
+
 vim.lsp.enable('ty')
 vim.lsp.enable('tsserver')
 vim.lsp.enable('html')
