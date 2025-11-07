@@ -34,10 +34,10 @@ vim.api.nvim_create_autocmd('TextYankPost', {
     end,
 })
 
--- Enable ty LSP for Python
 vim.lsp.enable('ty')
 vim.lsp.enable('tsserver')
 vim.lsp.enable('html')
 vim.lsp.enable('cssls')
 vim.lsp.enable('rust_analyzer')
 vim.lsp.enable('jsonls')
+vim.lsp.enable('lua_ls')
