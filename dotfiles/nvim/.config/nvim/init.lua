@@ -18,6 +18,9 @@ vim.opt.relativenumber = true
 -- Always show sign column to prevent screen shifting
 vim.opt.signcolumn = 'yes'
 
+-- Keep cursor away from screen edges
+vim.opt.scrolloff = 8
+
 -- Global default for all filetypes
 -- Use spaces instead of tabs
 vim.opt.expandtab = true
@@ -83,13 +86,16 @@ vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Previous diagnosti
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic' })
 
 -- quickfix list stuff
-vim.keymap.set('n', '<M-j>', ':cnext<CR>', { silent = true })
-vim.keymap.set('n', '<M-k>', ':cprevious<CR>', { silent = true })
+vim.keymap.set('n', '<]-q>', ':cnext<CR>', { silent = true })
+vim.keymap.set('n', '<[-q>', ':cprevious<CR>', { silent = true })
 
 vim.keymap.set('n', '<C-h>', '<C-w>h')
 vim.keymap.set('n', '<C-j>', '<C-w>j')
 vim.keymap.set('n', '<C-k>', '<C-w>k')
 vim.keymap.set('n', '<C-l>', '<C-w>l')
+
+-- persistent undos across sessions
+vim.opt.undofile = true
 
 vim.lsp.enable('ty')
 vim.lsp.enable('ruff')

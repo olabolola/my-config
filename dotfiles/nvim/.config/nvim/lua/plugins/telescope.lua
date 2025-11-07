@@ -38,13 +38,24 @@ return {
     end)
 
     -- Search contents of current file
-    vim.keymap.set("n", "<leader>fs", function()
+    vim.keymap.set("n", "<leader>fb", function()
       builtin.live_grep({ search_dirs = { vim.fn.expand("%:p") } })
-    end)
+    end, { desc = "Search current buffer" })
 
     vim.keymap.set("n", "<leader>fc", function()
       builtin.find_files({ cwd =  vim.fn.expand("~/my-config"), hidden=true, no_ignore=false, file_ignore_patterns={".git/"} })
     end)
+
+    -- Recent files
+    vim.keymap.set("n", "<leader>fr", builtin.oldfiles, { desc = "Recent files" })
+
+    -- Resume last picker
+    vim.keymap.set("n", "<leader>f<leader>", builtin.resume, { desc = "Resume last picker" })
+
+    -- LSP pickers
+    vim.keymap.set("n", "<leader>fd", builtin.diagnostics, { desc = "Search diagnostics" })
+    vim.keymap.set("n", "<leader>fs", builtin.lsp_document_symbols, { desc = "Document symbols" })
+    vim.keymap.set("n", "<leader>fS", builtin.lsp_workspace_symbols, { desc = "Workspace symbols" })
   end
 }
 
