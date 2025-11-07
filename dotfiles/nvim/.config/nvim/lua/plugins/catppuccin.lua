@@ -4,7 +4,7 @@ return {
     priority = 1000,
     config = function()
         require("catppuccin").setup({
-            flavour = "mocha", -- matches Ghostty
+            flavour = "auto", -- default flavour
         })
         vim.cmd.colorscheme "catppuccin"
     end,
