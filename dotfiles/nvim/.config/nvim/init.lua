@@ -15,6 +15,9 @@ vim.opt.termguicolors = true
 vim.opt.number = true
 vim.opt.relativenumber = true
 
+-- Always show sign column to prevent screen shifting
+vim.opt.signcolumn = 'yes'
+
 -- Global default for all filetypes
 -- Use spaces instead of tabs
 vim.opt.expandtab = true
@@ -42,7 +45,54 @@ end, { desc = 'Format file or selection' })
 -- Show signature help (function parameters) while typing
 vim.keymap.set('i', '<C-k>', vim.lsp.buf.signature_help, { desc = 'Signature help' })
 
+-- Diagnostic configuration
+vim.diagnostic.config({
+    virtual_text = {
+        prefix = '●',
+        severity = { min = vim.diagnostic.severity.WARN },
+    },
+    signs = true,
+    underline = true,
+    update_in_insert = false,
+    severity_sort = true,
+    float = {
+        border = 'rounded',
+        source = 'always',
+        header = '',
+        prefix = '',
+    },
+})
+
+-- Define diagnostic signs
+local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
+for type, icon in pairs(signs) do
+    local hl = "DiagnosticSign" .. type
+    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
+end
+
+-- LSP keybindings
+vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = 'Go to definition' })
+vim.keymap.set('n', 'gr', vim.lsp.buf.references, { desc = 'Go to references' })
+vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = 'Hover documentation' })
+vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { desc = 'Rename symbol' })
+vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = 'Code action' })
+
+-- Diagnostics navigation
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Next diagnostic' })
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Previous diagnostic' })
+vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic' })
+
+-- quickfix list stuff
+vim.keymap.set('n', '<M-j>', ':cnext<CR>', { silent = true })
+vim.keymap.set('n', '<M-k>', ':cprevious<CR>', { silent = true })
+
+vim.keymap.set('n', '<C-h>', '<C-w>h')
+vim.keymap.set('n', '<C-j>', '<C-w>j')
+vim.keymap.set('n', '<C-k>', '<C-w>k')
+vim.keymap.set('n', '<C-l>', '<C-w>l')
+
 vim.lsp.enable('ty')
+vim.lsp.enable('ruff')
 vim.lsp.enable('tsserver')
 vim.lsp.enable('html')
 vim.lsp.enable('cssls')

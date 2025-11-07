@@ -6,12 +6,4 @@ return {
     filetypes = { 'python' },
     root_markers = { 'pyproject.toml', 'ruff.toml', '.ruff.toml', '.git' },
     capabilities = capabilities,
-    init_options = {
-        settings = {
-            -- Enable formatting
-            format = {
-                preview = true,
-            },
-        },
-    },
 }
