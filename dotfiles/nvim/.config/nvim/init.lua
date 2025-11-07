@@ -9,6 +9,7 @@ vim.opt.smartcase = true
 
 -- share the clipboard between nvim and system
 vim.opt.clipboard = "unnamedplus"
+
 vim.opt.termguicolors = true
 
 -- relative line numbers
@@ -89,6 +90,7 @@ vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagn
 vim.keymap.set('n', ']q', ':cnext<CR>', { silent = true })
 vim.keymap.set('n', '[q', ':cprevious<CR>', { silent = true })
 
+-- Navigate between splits
 vim.keymap.set('n', '<C-h>', '<C-w>h')
 vim.keymap.set('n', '<C-j>', '<C-w>j')
 vim.keymap.set('n', '<C-k>', '<C-w>k')
@@ -108,7 +110,6 @@ vim.lsp.enable('bashls')
 vim.lsp.enable('yamlls')
 vim.lsp.enable('dockerls')
 vim.lsp.enable('taplo')
-
 
 
 
