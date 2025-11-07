@@ -86,8 +86,8 @@ vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Previous diagnosti
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic' })
 
 -- quickfix list stuff
-vim.keymap.set('n', '<]-q>', ':cnext<CR>', { silent = true })
-vim.keymap.set('n', '<[-q>', ':cprevious<CR>', { silent = true })
+vim.keymap.set('n', ']q', ':cnext<CR>', { silent = true })
+vim.keymap.set('n', '[q', ':cprevious<CR>', { silent = true })
 
 vim.keymap.set('n', '<C-h>', '<C-w>h')
 vim.keymap.set('n', '<C-j>', '<C-w>j')
@@ -104,4 +104,3 @@ vim.lsp.enable('html')
 vim.lsp.enable('cssls')
 vim.lsp.enable('rust_analyzer')
 vim.lsp.enable('jsonls')
-vim.lsp.enable('lua_ls')
