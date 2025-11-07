@@ -60,7 +60,7 @@ vim.diagnostic.config({
     severity_sort = true,
     float = {
         border = 'rounded',
-        source = 'always',
+        source = true,
         header = '',
         prefix = '',
     },
@@ -81,8 +81,8 @@ vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { desc = 'Rename symbol' }
 vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = 'Code action' })
 
 -- Diagnostics navigation
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Next diagnostic' })
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Previous diagnostic' })
+vim.keymap.set('n', ']d', function() vim.diagnostic.jump({count=1}) end, { desc = 'Next diagnostic' })
+vim.keymap.set('n', '[d', function() vim.diagnostic.jump({count=-1}) end, { desc = 'Previous diagnostic' })
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic' })
 
 -- quickfix list stuff
@@ -104,3 +104,13 @@ vim.lsp.enable('html')
 vim.lsp.enable('cssls')
 vim.lsp.enable('rust_analyzer')
 vim.lsp.enable('jsonls')
+vim.lsp.enable('bashls')
+vim.lsp.enable('yamlls')
+vim.lsp.enable('dockerls')
+vim.lsp.enable('taplo')
+
+
+
+
+
+
