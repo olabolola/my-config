@@ -29,6 +29,7 @@ return {
                     'yamlls',
                     'dockerls',
                     'taplo',
+                    'vtsls',
                 },
             })
         end,

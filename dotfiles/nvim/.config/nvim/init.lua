@@ -77,6 +77,9 @@ end
 -- copy everything
 vim.keymap.set('n', '<leader>y', ':silent 1,$y<CR>', { silent = true, desc = "Copy entire file" })
 
+-- paste over everything
+vim.keymap.set('n', '<leader>vp', 'ggVGp', {silent=true, desc = "paste over entire file"})
+
 -- LSP keybindings
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = 'Go to definition' })
 vim.keymap.set('n', 'gr', vim.lsp.buf.references, { desc = 'Go to references' })
@@ -104,7 +107,7 @@ vim.opt.undofile = true
 
 vim.lsp.enable('ty')
 vim.lsp.enable('ruff')
-vim.lsp.enable('tsserver')
+vim.lsp.enable('vtsls')
 vim.lsp.enable('html')
 vim.lsp.enable('cssls')
 vim.lsp.enable('rust_analyzer')
