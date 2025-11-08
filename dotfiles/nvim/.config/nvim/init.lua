@@ -42,7 +42,7 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 })
 
 -- Format file or selection
-vim.keymap.set({'n', 'v'}, '<leader>f', function()
+vim.keymap.set({ 'n', 'v' }, '<leader>f', function()
     require('conform').format({ async = false, lsp_fallback = true })
 end, { desc = 'Format file or selection' })
 
@@ -74,6 +74,9 @@ for type, icon in pairs(signs) do
     vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
 
+-- copy everything
+vim.keymap.set('n', '<leader>y', ':silent 1,$y<CR>', { silent = true, desc = "Copy entire file" })
+
 -- LSP keybindings
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition, { desc = 'Go to definition' })
 vim.keymap.set('n', 'gr', vim.lsp.buf.references, { desc = 'Go to references' })
@@ -82,8 +85,8 @@ vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { desc = 'Rename symbol' }
 vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = 'Code action' })
 
 -- Diagnostics navigation
-vim.keymap.set('n', ']d', function() vim.diagnostic.jump({count=1}) end, { desc = 'Next diagnostic' })
-vim.keymap.set('n', '[d', function() vim.diagnostic.jump({count=-1}) end, { desc = 'Previous diagnostic' })
+vim.keymap.set('n', ']d', function() vim.diagnostic.jump({ count = 1 }) end, { desc = 'Next diagnostic' })
+vim.keymap.set('n', '[d', function() vim.diagnostic.jump({ count = -1 }) end, { desc = 'Previous diagnostic' })
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic' })
 
 -- quickfix list stuff
@@ -110,8 +113,3 @@ vim.lsp.enable('bashls')
 vim.lsp.enable('yamlls')
 vim.lsp.enable('dockerls')
 vim.lsp.enable('taplo')
-
-
-
-
-
