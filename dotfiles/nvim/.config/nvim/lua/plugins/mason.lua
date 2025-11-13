@@ -30,6 +30,7 @@ return {
                     'dockerls',
                     'taplo',
                     'vtsls',
+                    'c'
                 },
             })
         end,
