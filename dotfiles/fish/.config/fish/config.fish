@@ -77,6 +77,3 @@ alias seemerged="git branch --merged | grep -vE '^\*|main|master|develop'"
 # Other aliases
 alias cd..='cd ..'
 alias cd-='cd -'
-
-starship init fish | source
-
