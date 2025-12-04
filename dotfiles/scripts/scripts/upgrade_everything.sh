@@ -9,3 +9,5 @@ uv self update
 uv tool upgrade --all
 
 npm update -g
+
+rustup update
